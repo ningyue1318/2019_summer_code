@@ -31,13 +31,6 @@ def login():
 
 
 """
-    功能：完成用户购物，一次只能购买一件物品
-         如果余额充足，直接扣款，打印购物清单，并退出系统
-         余额不足，提醒用户后，退出系统
-"""
-
-
-"""
     功能：完成用户信息的注册，当两次输入的密码相同时允许注册
 """
 
@@ -53,6 +46,13 @@ def register():
     with open('password.txt', mode='a', encoding='utf-8') as f:
         f.write(username+"|"+first_password+"|"+str(r_balance)+'\n')
     print('注册成功')
+
+
+"""
+    功能：完成用户购物，一次只能购买一件物品
+         如果余额充足，直接扣款，打印购物清单，并退出系统
+         余额不足，提醒用户后，退出系统
+"""
 
 
 def shopping():
@@ -91,6 +91,9 @@ def shopping():
             return False
 
 
+"""
+    主程序
+"""
 user_info = ''
 balance = ''
 while True:
