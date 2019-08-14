@@ -2,7 +2,10 @@ import sys
 sys.path.append('..')
 from lib.common import User
 from conf.settings import goods
+from log.log import log_wrapper
 
+# from ..lib.common import User
+# from ..conf.settings import goods
 """"
     信用卡管理程序的主程序
 """
@@ -29,7 +32,7 @@ def first_menu():
     print('                                                  ')
     print('--------------------------------------------------')
 
-
+@log_wrapper
 def show_goods():
     print(format('商品名', '<20') + format('价钱', '<20'))
     print('-----------------------------')

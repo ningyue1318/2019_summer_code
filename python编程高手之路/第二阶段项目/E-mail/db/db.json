@@ -1,1 +1,1 @@
-{"alice": {"balance": 920, "password": "123456"}, "bob": {"balance": 0, "password": "123456"}}
+{"alice": {"balance": 920, "password": "123456"}, "tom": {"balance": 0, "password": "12346"}, "bob": {"balance": 0, "password": "123456"}}
