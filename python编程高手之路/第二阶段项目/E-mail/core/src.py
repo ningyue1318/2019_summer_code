@@ -40,7 +40,7 @@ def show_goods():
         print(format(name, '<20') + format(money, '<20'))
 
 
-if __name__ == '__main__':
+def main():
     if_quit = True
     current_user = User()
     while if_quit:
@@ -83,3 +83,7 @@ if __name__ == '__main__':
                 current_user.change_balance('consumption', goods[choice_good])
             elif choice == '3':
                 if_quit = False
+
+
+if __name__ == '__main__':
+    main()
