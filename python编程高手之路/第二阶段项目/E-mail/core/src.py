@@ -4,8 +4,6 @@ from lib.common import User
 from conf.settings import goods
 from log.log import log_wrapper
 
-# from ..lib.common import User
-# from ..conf.settings import goods
 """"
     信用卡管理程序的主程序
 """
@@ -32,12 +30,41 @@ def first_menu():
     print('                                                  ')
     print('--------------------------------------------------')
 
+
 @log_wrapper
 def show_goods():
+    """
+    显示商品
+    :return:
+    """
     print(format('商品名', '<20') + format('价钱', '<20'))
     print('-----------------------------')
     for name, money in goods.items():
         print(format(name, '<20') + format(money, '<20'))
+
+
+def first_menu_operate(current_user):
+    """
+        第一个菜单下的操作， 1代表充值，2代表购物，3代表退出程序，
+        进行1,2,操作时返回true表示继续进行操作，
+        3操作时返回false，表示终止操作
+    :param current_user:
+    :return:
+    """
+    first_menu()
+    choice = input('请选择:\n')
+    # 1代表充值 2代表购物
+    if choice == '1':
+        recharge_money = input('请输入充值金额:\n')
+        current_user.change_balance('recharge', int(recharge_money))
+        return True
+    elif choice == '2':
+        show_goods()
+        choice_good = input('请选择要购买的货物：\n')
+        current_user.change_balance('consumption', goods[choice_good])
+        return True
+    elif choice == '3':
+        return False
 
 
 def main():
@@ -54,35 +81,12 @@ def main():
             # 1代表登录，2代表注册
             if choice == '1':
                 current_user.login()
-                first_menu()
-                choice = input('请选择:\n')
-
-                # 1代表充值 2代表购物 3表示退出
-                if choice == '1':
-                    recharge_money = input('请输入充值金额:\n')
-                    current_user.change_balance('recharge', int(recharge_money))
-                elif choice == '2':
-                    show_goods()
-                    choice_good = input('请选择要购买的货物：\n')
-                    current_user.change_balance('consumption', goods[choice_good])
-                elif choice == '3':
-                    if_quit = False
+                if_quit = first_menu_operate(current_user)
 
             elif choice == '2':
                 User.register()
         else:
-            first_menu()
-            choice = input('请选择:\n')
-            # 1代表充值 2代表购物
-            if choice == '1':
-                recharge_money = input('请输入充值金额:\n')
-                current_user.change_balance('recharge', int(recharge_money))
-            elif choice == '2':
-                show_goods()
-                choice_good = input('请选择要购买的货物：\n')
-                current_user.change_balance('consumption', goods[choice_good])
-            elif choice == '3':
-                if_quit = False
+            if_quit = first_menu_operate(current_user)
 
 
 if __name__ == '__main__':
