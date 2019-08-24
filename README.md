@@ -41,6 +41,7 @@
 3. NIN论文：Network In Network 
 4. GoogLeNet论文：Going deeper with convolutions 
 5. ResNet论文：Deep Residual Learning for Image Recognition 
+
 ####泛读论文（仅阅读论文）
 
 1.RCNN论文：Rich feature hierarchies for accurate object detection and semantic segmentation 
