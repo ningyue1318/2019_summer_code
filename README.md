@@ -39,7 +39,7 @@
 
 # 二、CV经典论文
 
-#### 精读论文（阅读论文原文并[代码复现] (https://github.com/ningyue1318/2019_summer_code/tree/master/competition)）：
+#### 精读论文 ( 阅读论文原文并[代码复现](https://github.com/ningyue1318/2019_summer_code/tree/master/competition))
 
 1. AlexNet论文：ImageNet Classifification with Deep Convolutional Neural Networks
 2. VGG论文：VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION
