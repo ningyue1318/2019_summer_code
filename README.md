@@ -13,10 +13,10 @@
 - python  
 
 
-#一、强化学习部分 
+# 一、强化学习部分 
 
 
-####学习资料：
+#### 学习资料：
 
 - 观看[David Silver强化学习课程](https://space.bilibili.com/74997410?spm_id_from=333.788.b_765f7570696e666f.2)，课程主要内容为：MDP、Value Iteration、Policy Iteration、Monte Carlo menthod、TD，TD（λ），Sarsa，DQN，Double DQN，Policy Gradient
 
@@ -47,7 +47,7 @@
 4. GoogLeNet论文：Going deeper with convolutions 
 5. ResNet论文：Deep Residual Learning for Image Recognition 
 
-####泛读论文（仅阅读论文）
+#### 泛读论文（仅阅读论文）
 
 1.RCNN论文：Rich feature hierarchies for accurate object detection and semantic segmentation 
 
