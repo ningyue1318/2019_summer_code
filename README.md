@@ -10,8 +10,11 @@
 
 - kaggle比赛
 
-- python 
-#一、强化学习部分
+- python  
+
+
+#一、强化学习部分 
+
 
 ####学习资料：
 
@@ -26,15 +29,17 @@
 - 书籍 
    郭宪 深入浅出强化学习原理入门
 
-   冯超 强化学习精要核心算法与TensorFlow实现
+   冯超 强化学习精要核心算法与TensorFlow实现 
+
 
 #### 学习效果：
 
-初步了解强化学习内容，还需复习加深有关知识点理解
+初步了解强化学习内容，还需复习加深有关知识点理解 
+
 
 # 二、CV经典论文
 
-#### 精读论文（阅读论文原文并[代码复现](https://github.com/ningyue1318/2019_summer_code/tree/master/competition)）：
+#### 精读论文（阅读论文原文并[代码复现] (https://github.com/ningyue1318/2019_summer_code/tree/master/competition)）：
 
 1. AlexNet论文：ImageNet Classifification with Deep Convolutional Neural Networks
 2. VGG论文：VERY DEEP CONVOLUTIONAL NETWORKS FOR LARGE-SCALE IMAGE RECOGNITION
