@@ -1,12 +1,13 @@
+import sys
+sys.path.append('..')
 from entity.Course import Course
 from entity.Teacher import Teacher
 from db.Db import UserDb
 
 
 class School:
-    def __init__(self, school_name):
-        self.school_name = school_name
-        self.teacher_list = []
+    def __init__(self):
+        self.teacher_list = UserDb.load_from_memory('Teacher')
         self.course_list = UserDb.load_from_memory('Course')
         self.student_list = []
 
@@ -17,7 +18,8 @@ class School:
         teacher_name = input('请输入老师的名称:\n').strip()
         t = Teacher(teacher_name)
         self.teacher_list.append(t)
-        print('增加教师：'+t.name)
+        UserDb.write_to_memory('Teacher', self.teacher_list)
+        print('增加教师：' + t.name)
 
     def add_course(self):
         course_name = input('请输入课程名称:\n').strip()

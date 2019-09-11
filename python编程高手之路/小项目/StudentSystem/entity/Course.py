@@ -20,3 +20,4 @@ class Course:
     def __str__(self):
         return '本门课程：{}，开课地点：{}，开课时间：{}，开课价格：{}'\
             .format(self.course_name, self.course_loc, self.course_time, self.course_price)
+

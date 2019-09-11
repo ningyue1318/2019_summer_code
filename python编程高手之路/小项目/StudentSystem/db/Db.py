@@ -1,12 +1,12 @@
 import pickle
 import os
-#import sys
-# sys.path.append('..')
+import sys
+sys.path.append('..')
+from entity.Course import Course
 from conf.settings import *
 
 
 class User:
-
     @staticmethod
     def login():
         flag = 3
@@ -29,6 +29,35 @@ class User:
         while first_password != second_password:
             first_password = input('请输入需要注册的密码:\n')
             second_password = input('请再次确认密码:\n')
+
+    @staticmethod
+    def teacher_login(teacher_list):
+        flag = 3
+        while flag > 0:
+            username = input('请输入用户名:\n')
+            password = input('请输入密码：\n')
+            for t in teacher_list:
+                if t.name == username and t.password == password:
+                    return t
+            else:
+                flag -= 1
+                print('登录失败,还剩{}次机会'.format(str(flag)))
+        return None
+
+    @staticmethod
+    def teacher_change_password(local_teacher, teacher_list):
+        first_password = 'first'
+        second_password = 'second'
+        while first_password != second_password:
+            first_password = input('请输入新的密码:\n')
+            second_password = input('请再次确认密码:\n')
+        index = -1
+        for t in teacher_list:
+            index += 1
+            if t.name == local_teacher.name:
+                break
+        teacher_list[index].password = first_password
+        UserDb.write_to_memory('Teacher',teacher_list)
 
 
 class UserDb:

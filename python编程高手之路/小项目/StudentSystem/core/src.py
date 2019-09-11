@@ -1,11 +1,26 @@
+import sys
+sys.path.append('..')
 from entity.School import School
 from entity.Course import Course
 from entity.Teacher import Teacher
 from db.Db import User
+from core import teacher_core
 
 
 def teacher():
-    print('教师登录')
+    print("""
+         1 登    录
+
+         2 修改密码
+    """)
+    choice = input('请选择：\n')
+    school = School()
+    local_teacher = User.teacher_login(school.teacher_list)
+    if choice == '1':
+        if local_teacher:
+            teacher_core.core()
+    elif choice == '2':
+        User.teacher_change_password(local_teacher,school.teacher_list)
 
 
 def student():
@@ -14,7 +29,7 @@ def student():
 
 def operator():
     if User.login():
-        school = School('东北大学')
+        school = School()
         while True:
             print("""
                 1 增加教师
