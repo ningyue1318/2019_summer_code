@@ -1,0 +1,33 @@
+from entity.Course import Course
+from entity.Teacher import Teacher
+from db.Db import UserDb
+
+
+class School:
+    def __init__(self, school_name):
+        self.school_name = school_name
+        self.teacher_list = []
+        self.course_list = UserDb.load_from_memory('Course')
+        self.student_list = []
+
+    def load_data(self):
+        pass
+
+    def add_teacher(self):
+        teacher_name = input('请输入老师的名称:\n').strip()
+        t = Teacher(teacher_name)
+        self.teacher_list.append(t)
+        print('增加教师：'+t.name)
+
+    def add_course(self):
+        course_name = input('请输入课程名称:\n').strip()
+        course_loc = input('请输入课程位置:\n').strip()
+        course_price = input('请输入课程价格:\n').strip()
+        course_time = input('请输入课程时间:\n').strip()
+        c = Course(course_name, course_loc, course_price, course_time)
+        self.course_list.append(c)
+        UserDb.write_to_memory('Course', self.course_list)
+        print(c)
+
+    def add_student(self, student):
+        pass
