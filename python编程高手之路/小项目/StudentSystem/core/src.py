@@ -18,9 +18,9 @@ def teacher():
     local_teacher = User.teacher_login(school.teacher_list)
     if choice == '1':
         if local_teacher:
-            teacher_core.core()
+            teacher_core.core(local_teacher, school.teacher_list)
     elif choice == '2':
-        User.teacher_change_password(local_teacher,school.teacher_list)
+        User.teacher_change_password(local_teacher, school.teacher_list)
 
 
 def student():
