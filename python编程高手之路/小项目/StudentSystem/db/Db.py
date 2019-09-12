@@ -6,6 +6,10 @@ from entity.Course import Course
 from entity.Student import Student
 from conf.settings import *
 
+"""
+    学生，老师，管理员进行登录，注册的类
+"""
+
 
 class User:
     @staticmethod
@@ -78,6 +82,11 @@ class User:
                 flag -= 1
                 print('登录失败,还剩{}次机会'.format(str(flag)))
         return None
+
+
+"""
+    将数据写入内存和在内存中加载数据的类
+"""
 
 
 class UserDb:

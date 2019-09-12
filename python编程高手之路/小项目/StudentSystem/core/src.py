@@ -9,6 +9,11 @@ from core import student_core
 
 
 def teacher():
+    """
+        教师模块分为登录和修改密码
+        教师账号由管理员创建，创建完成后在这里更改密码
+    :return: 空
+    """
     print("""
          1 登    录
 
@@ -25,6 +30,11 @@ def teacher():
 
 
 def student():
+    """
+        学生模块分为1登录，2注册
+        登录成功后，进入学生模块
+    :return:空
+    """
     print("""
             1 登    录
 
@@ -42,6 +52,11 @@ def student():
 
 
 def operator():
+    """
+        func：管理员模块的功能分为1增加教师，2增加课程，3退出系统
+             其中，管理员登录密码固定，用户名：Alice,密码：123456
+    :return: 空
+    """
     if User.login():
         school = School()
         while True:
@@ -68,6 +83,11 @@ func_dic = {
 
 
 def run():
+    """
+        func： 整个系统的主函数，分为三个模块，
+                1进入教师模块，2进入学生模块，3进入管理员模块
+    :return:空
+    """
     while True:
         print("""
         1 教师

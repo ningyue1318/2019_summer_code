@@ -4,6 +4,10 @@ from entity.Course import Course
 from entity.Teacher import Teacher
 from db.Db import UserDb
 
+"""
+    学校类，拥有teacher列表，course列表，student列表，在初始化的时候在内存中加载
+"""
+
 
 class School:
     def __init__(self):
