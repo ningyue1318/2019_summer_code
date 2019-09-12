@@ -5,6 +5,7 @@ from entity.Course import Course
 from entity.Teacher import Teacher
 from db.Db import User
 from core import teacher_core
+from core import student_core
 
 
 def teacher():
@@ -24,7 +25,20 @@ def teacher():
 
 
 def student():
-    print('学生登录')
+    print("""
+            1 登    录
+
+            2 注    册
+       """)
+    choice = input('请选择:\n')
+    school = School()
+    if choice in ['1', '2']:
+        if choice == '1':
+            local_student = User.student_login(school.student_list)
+            if local_student:
+                student_core.core(local_student)
+        elif choice == '2':
+            User.register()
 
 
 def operator():

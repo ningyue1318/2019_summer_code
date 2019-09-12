@@ -3,6 +3,7 @@ import os
 import sys
 sys.path.append('..')
 from entity.Course import Course
+from entity.Student import Student
 from conf.settings import *
 
 
@@ -29,6 +30,11 @@ class User:
         while first_password != second_password:
             first_password = input('请输入需要注册的密码:\n')
             second_password = input('请再次确认密码:\n')
+        s = Student(username, first_password)
+        student_list = UserDb.load_from_memory('Student')
+        student_list.append(s)
+        UserDb.write_to_memory('Student', student_list)
+        print('注册成功')
 
     @staticmethod
     def teacher_login(teacher_list):
@@ -58,6 +64,20 @@ class User:
                 break
         teacher_list[index].password = first_password
         UserDb.write_to_memory('Teacher',teacher_list)
+
+    @staticmethod
+    def student_login(student_list):
+        flag = 3
+        while flag > 0:
+            username = input('请输入用户名:\n')
+            password = input('请输入密码：\n')
+            for s in student_list:
+                if s.name == username and s.password == password:
+                    return s
+            else:
+                flag -= 1
+                print('登录失败,还剩{}次机会'.format(str(flag)))
+        return None
 
 
 class UserDb:

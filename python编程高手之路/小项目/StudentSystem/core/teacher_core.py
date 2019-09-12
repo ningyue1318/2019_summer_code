@@ -27,8 +27,19 @@ def choose_class(teacher, teacher_list):
         UserDb.write_to_memory('Teacher', teacher_list)
 
 
-def scoring():
-    print('打分')
+def scoring(teacher):
+    course_list = UserDb.load_from_memory('Course')
+    c_index = -1
+    for c in course_list:
+        c_index += 1
+        if c.course_teacher == teacher.name:
+            print('请给学生打分:\n')
+            s_index = 0
+            for sc in c.course_student:
+                score = input(sc.student_name+":的分数为\n")
+                course_list[c_index].course_student[s_index].score = score
+                print(sc.student_name+":分数为"+score)
+    UserDb.write_to_memory('Course', course_list)
 
 
 def see_course(teacher):
@@ -54,7 +65,7 @@ def core(teacher, teacher_list):
             elif choice == '2':
                 see_course(teacher)
             elif choice == '3':
-                pass
+                scoring(teacher)
             elif choice == '4':
                 print('退出系统')
                 break

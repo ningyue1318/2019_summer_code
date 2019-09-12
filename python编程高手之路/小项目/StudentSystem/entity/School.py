@@ -9,7 +9,7 @@ class School:
     def __init__(self):
         self.teacher_list = UserDb.load_from_memory('Teacher')
         self.course_list = UserDb.load_from_memory('Course')
-        self.student_list = []
+        self.student_list = UserDb.load_from_memory('Student')
 
     def load_data(self):
         pass
