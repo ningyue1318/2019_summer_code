@@ -37,7 +37,7 @@
 初步了解强化学习内容，还需复习加深有关知识点理解 
 
 
-##二、CV经典论文
+## 二、CV经典论文
 
 #### 精读论文 ( 阅读论文原文并[代码复现](https://github.com/ningyue1318/2019_summer_code/tree/master/competition))
 
@@ -80,13 +80,16 @@ Tech report
 ##学习内容
 
 **1 线性回归:线性回归,Lasso回归，Ridge回归，贝叶斯线性回归，指数分布族**
-**2 线性分类：感知机，线性判别分析，高斯判别分析，逻辑回归，神经网络**
-**3 SVM，kernel SVM**
-**4 kNN, 朴素贝叶斯，决策树CART,ID3,C4.5**
-**5 集成方法，adaboost,boosting,bagging, xgboost,GBDT**
-**6 聚类与降维，kmeans，层次聚类，DBSCAN，谱聚类，PCA，SVD，GMM**
 
-----------------------------------------------------------
+**2 线性分类：感知机，线性判别分析，高斯判别分析，逻辑回归，神经网络**
+
+**3 SVM，kernel SVM**
+
+**4 kNN, 朴素贝叶斯，决策树CART,ID3,C4.5**
+
+**5 集成方法，adaboost,boosting,bagging, xgboost,GBDT**
+
+**6 聚类与降维，kmeans，层次聚类，DBSCAN，谱聚类，PCA，SVD，GMM**
 
 **7 EM算法**
 
@@ -95,8 +98,6 @@ Tech report
 **9 概率图，马尔可夫图，贝叶斯图，**CRF
 
 10 卡尔曼滤波，粒子滤波，狄利克雷过程，MCMC,变分推断，近似推断  
-
-----------------------------------------
 
 11 基本的特征工程，特征选择
 
